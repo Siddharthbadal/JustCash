@@ -1,8 +1,12 @@
+import Link from "next/link"
 
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <Link href={"/dashboard/transcations/new"}>
+            New Transcations
+    
+    </Link>
   )
 }
 

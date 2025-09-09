@@ -1,8 +1,14 @@
+import TranscationForm from "@/components/TranscationForm"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { getCategories } from "@/data/getCategories"
 import Link from "next/link"
 
-const NewTranscationPage = () => {
+const NewTranscationPage = async () => {
+    const categories = await getCategories()
+
+
+
   return (
     <div className="max-w-screen-xl mx-auto py-10">
         <Breadcrumb>
@@ -41,7 +47,7 @@ const NewTranscationPage = () => {
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                form 
+                <TranscationForm categories={categories}  /> 
             </CardContent>
 
         </Card>
